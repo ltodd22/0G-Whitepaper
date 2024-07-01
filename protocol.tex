@@ -2,13 +2,13 @@
 \section{Log System Protocol}
 
 
-The log layer of \projabbrev Storage provides decentralized storage service via a permissionless network of Storage Nodes.
-These Storage Nodes collaboratively serve archived data,
+The log layer of \projabbrev Storage provides decentralized storage service via a permissionless network of storage nodes.
+These storage nodes collaboratively serve archived data,
 where each node optionally specifies which portion of data it keeps in local storage.
 
 \begin{figure}[H]
 		\includegraphics[width=\textwidth]{figure/protocol_overview.pdf}
-		\caption{Overview of \projabbrev Storage protocol. Data creation and reward distribution are fully decoupled: users directly submit storage requests to the \projabbrev Storage contract deployed on host blockchain; Storage Nodes claim rewards by proving to the contract that they have the ability to answer random queries to archived data. \projabbrev tokens are handled in another isolated contract, which enables non-blocking token transfer.}
+		\caption{Overview of \projabbrev Storage protocol. Data creation and reward distribution are fully decoupled: users directly submit storage requests to the \projabbrev Storage contract deployed on host blockchain; storage nodes claim rewards by proving to the contract that they have the ability to answer random queries to archived data. \projabbrev tokens are handled in another isolated contract, which enables non-blocking token transfer.}
 		\label{fig:overview}
 \end{figure}
 
@@ -27,7 +27,7 @@ where each request includes necessary metadata such as data size and commitments
 and it comes along with the payment for storage service.
 Data entries are created for accepted data requests, keeping record of stored data while
 reward distribution is handled independently through a mining process.
-Storage Nodes submit mining proofs to the \projabbrev Storage contract to claim rewards for maintaining the \projabbrev Storage network.
+storage nodes submit mining proofs to the \projabbrev Storage contract to claim rewards for maintaining the \projabbrev Storage network.
 
 
 The token circulation of \projabbrev is fully embedded into the host chain ecosystem,
@@ -61,7 +61,7 @@ every log entry must be padded to multiple sectors.
 
 The mining process of \projabbrev Storage requires proving data accessibility to random challenge queries.
 To maximize the competitive edge of SSD storage, the challenge queries are set to the level of \chunksize \emph{chunks}, \ie 1024 sectors.
-As every challenge query requires the miner to prove accessibility to a whole chunk of data, Storage Nodes would maintain data at the granularity of chunks. 
+As every challenge query requires the miner to prove accessibility to a whole chunk of data, storage nodes would maintain data at the granularity of chunks. 
 
 \subsection{Data Flow}
 In \projabbrev Storage, committed data are organized sequentially.

@@ -5,7 +5,7 @@
 There are one or multiple separate consensus networks that are part of both the \projabbrev DA and the \projabbrev Storage. 
 For \projabbrev Storage, each consensus network is responsible for determining the ordering of the uploaded data blocks, realizing the storage mining verification and the corresponding incentive mechanism through smart contract. For \projabbrev DA, the consensus is in charge of guaranteeing the data availability property of each data block via verifying the aggregated signatures from the corresponding data availability quorum. 
 
-Figure~\ref{fig:0gda} illustrates the architecture of the \projabbrev system when deploying a single consensus network. When a data block enters the \projabbrev DA, it is first erasure coded and organized into multiple consecutive chunks through erasure coding. The merkle root as a commitment of the encoded data block is then submitted to the consensus layer to keep the order of the data entering the system. The chunks are then dispersed to different Storage Nodes in a quorum in \projabbrev Storage. The Storage Nodes periodically participate the mining process by interacting with the consensus network to accrue rewards from the system. 
+Figure~\ref{fig:0gda} illustrates the architecture of the \projabbrev system when deploying a single consensus network. When a data block enters the \projabbrev DA, it is first erasure coded and organized into multiple consecutive chunks through erasure coding. The merkle root as a commitment of the encoded data block is then submitted to the consensus layer to keep the order of the data entering the system. The chunks are then dispersed to different storage nodes in a quorum in \projabbrev Storage. The storage nodes periodically participate the mining process by interacting with the consensus network to accrue rewards from the system. 
 The DA client then collects the aggregated signatures from the quorum and submits the signatures to the consensus for verification.
 
 \begin{figure}[H]	
@@ -39,7 +39,7 @@ As illustrated in Figure~\ref{fig:scale}, this shared staking design introduces 
 
 \projabbrev Storage employs layered design targeting to support different types of decentralized applications. Figure~\ref{fig:stack} shows the overview of the full stack layers of \projabbrev Storage. 
 
-The lowest is a log layer that is a decentralized system consisting of multiple Storage Nodes that form a storage network with a built-in incentive mechanism that rewards data storage. The ordering of the uploaded data is guaranteed by a sequencing mechanism that provides log-based semantics and abstraction. This layer is used to store unstructured raw data for permanent persistency.
+The lowest is a log layer that is a decentralized system consisting of multiple storage nodes that form a storage network with a built-in incentive mechanism that rewards data storage. The ordering of the uploaded data is guaranteed by a sequencing mechanism that provides log-based semantics and abstraction. This layer is used to store unstructured raw data for permanent persistency.
 
 \begin{figure}[H]	
 	%\vspace{-6mm}

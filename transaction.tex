@@ -2,8 +2,7 @@
 \section{Transactional Processing on Key-Value Store}
 
 \projabbrev Storage employs concurrency control in the key-value runtime to support transactional processing for concurrent operations on multiple keys. 
-This concurrency control mechanism is optimistic and hinges on the overall ordering of log entries which is enforced by the underlying log layer. 
-Figure~\ref{fig:tx} illustrates the mechanism.
+The total order of the log entries guaranteed by the underlying log system provides the foundation for this concurrency control of the transactional executions on top of the key-value store. This mechanism is optimistic and illustrated in Figure~\ref{fig:tx}.
 
 When an application server linking with the \projabbrev Storage key-value runtime starts a transaction using \texttt{BeginTx()} interface, it notifies the runtime that the transaction will work on the current state snapshot constructed by playing the log to the current tail.
 The further key-value operations before the invocation of \texttt{EndTx()} update the key-values locally in the server without exposing the updates to the log. 
